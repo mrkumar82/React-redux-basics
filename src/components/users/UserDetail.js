@@ -25,7 +25,7 @@ function UserDetail() {
     <div>
       {loading && (
         <div className="row">
-          {/* <div className="col s12 m7">
+          <div className="col s12 m7">
             <div className="card">
               <div className="card-image">
                 <img src={user.avatar} alt={user.first_name} />
@@ -37,7 +37,7 @@ function UserDetail() {
                 <h5>Email : {user.email}</h5>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
       )}
     </div>
