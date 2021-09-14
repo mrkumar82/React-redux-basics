@@ -22,12 +22,11 @@ const contactReducer = (state = initialtState, action) => {
     case ActionTypes.ADD_CONTACT:
       return { ...state, contacts: [...state.contacts, action.payload] };
     case ActionTypes.EDIT_CONTACT:
-      const updateItem = [...state.contacts];
-      const findIndex = updateItem.findIndex(
-        (item) => item.id === action.payload.id
+      const currentState = [...state.contacts];
+      const updateItems = currentState.map((item) =>
+        item.id === action.payload.id ? action.payload : item
       );
-      updateItem[findIndex] = action.payload;
-      return { ...state, contacts: [...updateItem] };
+      return { ...state, contacts: [...updateItems] };
 
     case ActionTypes.DELETE_CONTACT:
       const deleteitem = [...state.contacts];
